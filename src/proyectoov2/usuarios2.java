@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package proyectoov3;
+package proyectoov2;
 import java.sql.*;
 import javax.swing.JOptionPane;
 /**
  *
  * @author arana
  */
-public class proveedores extends javax.swing.JFrame {
+public class usuarios2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form proveedores
+     * Creates new form usuarios2
      */
-    public proveedores() {
+    public usuarios2() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -30,23 +30,24 @@ public class proveedores extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        txt_descripcion = new javax.swing.JTextField();
-        txt_nombre_provedor = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_buscar = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        txt_nombre_usuario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txt_codigo_producto = new javax.swing.JTextField();
+        txt_usuario = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_contraseña = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txt_marca = new javax.swing.JTextField();
+        txt_no_de_seguridad = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        txt_buscar = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,15 +56,30 @@ public class proveedores extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Onyx", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("PROVEEDORES");
+        jLabel1.setText("USUARIOS");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 204, 204), null, null));
 
-        jButton5.setText("REGRESAR");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("Ingresa el codigo del usuario a buscar:");
+
+        jLabel3.setText("Nombre del Usuario:");
+
+        txt_nombre_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                txt_nombre_usuarioActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Usuario:");
+
+        jLabel5.setText("Contraseña:");
+
+        txt_contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_contraseñaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("No. de Seguridad:");
 
         jButton1.setText("REGISTRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,37 +88,10 @@ public class proveedores extends javax.swing.JFrame {
             }
         });
 
-        txt_descripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_descripcionActionPerformed(evt);
-            }
-        });
-
-        txt_nombre_provedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombre_provedorActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Nombre del Provedor:");
-
-        jLabel5.setText("Descripcion:");
-
-        jLabel4.setText("Codigo del Producto:");
-
-        jLabel6.setText("Marca:");
-
         jButton2.setText("MODIFICAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setText("LIMPIAR");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
             }
         });
 
@@ -120,6 +109,20 @@ public class proveedores extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("TABLAS");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("LIMPIAR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         jButton6.setText("SALIR");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +130,8 @@ public class proveedores extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Ingresa el codigo del provedor a buscar:");
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setText("admin.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,36 +140,8 @@ public class proveedores extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txt_nombre_provedor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txt_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_codigo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton1)
@@ -183,15 +159,48 @@ public class proveedores extends javax.swing.JFrame {
                                         .addGap(88, 88, 88)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton4)
-                                    .addComponent(jButton6))))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                                    .addComponent(jButton6)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_nombre_usuario))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(25, 25, 25)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_no_de_seguridad, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -199,19 +208,19 @@ public class proveedores extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
-                        .addComponent(txt_nombre_provedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_nombre_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
-                        .addComponent(txt_codigo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(txt_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(txt_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addComponent(txt_no_de_seguridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -222,7 +231,7 @@ public class proveedores extends javax.swing.JFrame {
                     .addComponent(jButton6)
                     .addComponent(jButton7)
                     .addComponent(jButton5))
-                .addGap(39, 39, 39))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -233,52 +242,46 @@ public class proveedores extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        tablas acceso=new tablas();
+    private void txt_nombre_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombre_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nombre_usuarioActionPerformed
 
-        acceso.setVisible(true);
-        this.setVisible(false);
-        this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void txt_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_contraseñaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try{
             Connection xd = DriverManager.getConnection("jdbc:mysql://localhost/proyecto" ,"root", "");
-            PreparedStatement pst = xd.prepareStatement("insert into proveedores values(?,?,?,?,?)");
+            PreparedStatement pst = xd.prepareStatement("insert into usuarios values(?,?,?,?,?)");
 
             pst.setString(1, "0");
-            pst.setString(2, txt_nombre_provedor.getText().trim());
-            pst.setString(3, txt_codigo_producto.getText().trim());
-            pst.setString(4, txt_descripcion.getText().trim());
-            pst.setString(5, txt_marca.getText().trim());
+            pst.setString(2, txt_nombre_usuario.getText().trim());
+            pst.setString(3, txt_usuario.getText().trim());
+            pst.setString(4, txt_contraseña.getText().trim());
+            pst.setString(5, txt_no_de_seguridad.getText().trim());
 
             pst.executeUpdate();
 
             txt_buscar.setText("");
-            txt_nombre_provedor.setText("");
-            txt_codigo_producto.setText("");
-            txt_descripcion.setText("");
-            txt_marca.setText("");
+            txt_nombre_usuario.setText("");
+            txt_usuario.setText("");
+            txt_contraseña.setText("");
+            txt_no_de_seguridad.setText("");
 
             JOptionPane.showMessageDialog(null,"Registro exitoso.");
 
         }catch(Exception e){
-
+JOptionPane.showMessageDialog(null, "error"+e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txt_nombre_provedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombre_provedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_nombre_provedorActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -287,12 +290,12 @@ public class proveedores extends javax.swing.JFrame {
             String id = txt_buscar.getText().trim();
 
             Connection xd = DriverManager.getConnection("jdbc:mysql://localhost/proyecto", "root", "");
-            PreparedStatement pst = xd.prepareStatement("update proveedores set nombre_provedor = ?, id_producto = ?, descripcion = ?, marca = ? where id_provedor = " + id);
+            PreparedStatement pst = xd.prepareStatement("update usuarios set nombre_del_usuario = ?, usuario = ?, contraseña = ?, no_de_seg = ? where id_usuario = " + id);
 
-            pst.setString(1,txt_nombre_provedor.getText().trim());
-            pst.setString(2,txt_codigo_producto.getText().trim());
-            pst.setString(3,txt_descripcion.getText().trim());
-            pst.setString(4,txt_marca.getText().trim());
+            pst.setString(1,txt_nombre_usuario.getText().trim());
+            pst.setString(2,txt_usuario.getText().trim());
+            pst.setString(3,txt_contraseña.getText().trim());
+            pst.setString(4,txt_no_de_seguridad.getText().trim());
 
             pst.executeUpdate();
 
@@ -303,35 +306,25 @@ JOptionPane.showMessageDialog(null, "error"+e);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        txt_buscar.setText("");
-        txt_nombre_provedor.setText("");
-        txt_codigo_producto.setText("");
-        txt_descripcion.setText("");
-        txt_marca.setText("");
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try{
 
             Connection xd = DriverManager.getConnection("jdbc:mysql://localhost/proyecto" ,"root", "");
-            PreparedStatement pst = xd.prepareStatement("delete from proveedores where id_provedor = ?");
+            PreparedStatement pst = xd.prepareStatement("delete from usuarios where id_usuario = ?");
 
             pst.setString(1,txt_buscar.getText().trim());
             pst.executeUpdate();
 
             txt_buscar.setText("");
-            txt_nombre_provedor.setText("");
-            txt_codigo_producto.setText("");
-            txt_descripcion.setText("");
-            txt_marca.setText("");
+            txt_nombre_usuario.setText("");
+            txt_usuario.setText("");
+            txt_contraseña.setText("");
+            txt_no_de_seguridad.setText("");
 
             JOptionPane.showMessageDialog(null,"registro eliminado");
 
         }catch(Exception e) {
-        JOptionPane.showMessageDialog(null, "error"+e);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -340,22 +333,22 @@ JOptionPane.showMessageDialog(null, "error"+e);
 
         try{
             Connection xd = DriverManager.getConnection("jdbc:mysql://localhost/proyecto" ,"root", "");
-            PreparedStatement pst = xd.prepareStatement("select * from proveedores where id_provedor = ?");
+            PreparedStatement pst = xd.prepareStatement("select * from usuarios where id_usuario = ?");
 
             pst.setString(1,txt_buscar.getText().trim());
 
             ResultSet rs = pst.executeQuery();
 
             if(rs.next()){
-                txt_nombre_provedor.setText(rs.getString("nombre_provedor"));
-                txt_codigo_producto.setText(rs.getString("id_producto"));
-                txt_descripcion.setText(rs.getString("descripcion"));
-                txt_marca.setText(rs.getString("marca"));
+                txt_nombre_usuario.setText(rs.getString("nombre_del_usuario"));
+                txt_usuario.setText(rs.getString("usuario"));
+                txt_contraseña.setText(rs.getString("contraseña"));
+                txt_no_de_seguridad.setText(rs.getString("no_de_seg"));
 
                 JOptionPane.showMessageDialog(null,"busqueda exitosa");
 
             }else{
-                JOptionPane.showMessageDialog(null,"proveedor no encontrado.");
+                JOptionPane.showMessageDialog(null,"usuario no encontrado.");
 
             }
 
@@ -364,13 +357,26 @@ JOptionPane.showMessageDialog(null, "error"+e);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        tablas acceso=new tablas();
+
+        acceso.setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        txt_buscar.setText("");
+        txt_nombre_usuario.setText("");
+        txt_usuario.setText("");
+        txt_contraseña.setText("");
+        txt_no_de_seguridad.setText("");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void txt_descripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_descripcionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_descripcionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -389,20 +395,20 @@ JOptionPane.showMessageDialog(null, "error"+e);
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(usuarios2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(usuarios2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(usuarios2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(usuarios2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new proveedores().setVisible(true);
+                new usuarios2().setVisible(true);
             }
         });
     }
@@ -421,12 +427,12 @@ JOptionPane.showMessageDialog(null, "error"+e);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_buscar;
-    private javax.swing.JTextField txt_codigo_producto;
-    private javax.swing.JTextField txt_descripcion;
-    private javax.swing.JTextField txt_marca;
-    private javax.swing.JTextField txt_nombre_provedor;
+    private javax.swing.JTextField txt_contraseña;
+    private javax.swing.JTextField txt_no_de_seguridad;
+    private javax.swing.JTextField txt_nombre_usuario;
+    private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
-//rene lo hizo xd
